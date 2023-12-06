@@ -63,8 +63,10 @@ function addNumbers(sum, numsLeft, completionCallback) {
 // addNumbers(0, 3, sum => console.log(`Total Sum: ${sum}`));
 
 Function.prototype.myBind = function myBind(context) {
-    return () => {
-        this.apply(context);
+    let that = this;
+
+    return function() { 
+        return that.apply(context)
     }
 }
 
@@ -103,7 +105,7 @@ function askIfGreaterThan(el1, el2, callback) {
 }
 
 function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
-    
+
 }
 
 
